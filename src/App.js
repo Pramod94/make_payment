@@ -1,7 +1,10 @@
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppWithRouterAccess from "./AppWithRouterAccess";
 
-function App() {
-  return <div>Make Payment App</div>;
-}
-
+const App = () => (
+  <Router>
+    <AppWithRouterAccess />
+  </Router>
+);
 export default App;
