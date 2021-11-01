@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Button, TextField, CircularProgress } from "@mui/material";
 import { ApiCall } from "../../Api/Axios";
 import Styles from "./styles.module.css";
+import { Constants } from "../../Constants";
 
 const ViewBalance = () => {
   const [balance, setBalance] = useState("");
@@ -50,7 +51,7 @@ const ViewBalance = () => {
     <div className={Styles.container}>
       <div className={Styles.balContainer}>
         <div className={Styles.viewBalContainer}>
-          <label className={Styles.balAmount}>Balance</label>:
+          <label className={Styles.balAmount}>{Constants.balance}</label>:
           {isLoading.balLoading ? (
             <CircularProgress color="secondary" size="30px" />
           ) : (
@@ -65,7 +66,9 @@ const ViewBalance = () => {
           onChange={handleAmountChange}
         />
         <Button variant="contained" color="success" onClick={handlePayment}>
-          {isLoading.payLoading ? "Processing Payment..." : "Pay now"}
+          {isLoading.payLoading
+            ? `${Constants.processing_pay}`
+            : `${Constants.payNow}`}
         </Button>
       </div>
     </div>
