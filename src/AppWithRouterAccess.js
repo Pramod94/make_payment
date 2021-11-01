@@ -2,10 +2,10 @@ import React from "react";
 import { Route, useHistory, Switch } from "react-router-dom";
 import { Security, SecureRoute, LoginCallback } from "@okta/okta-react";
 import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
-import ViewBalance from "./ViewBalance";
+import ViewBalance from "./components/ViewBalance/ViewBalance";
 import Login from "./components/Login/Login";
-import PayConfirmation from "./PayConfirmation";
-import { oktaAuthConfig, oktaSignInConfig } from "./config";
+import PayConfirmation from "./components/PayConfirmation/PayConfirmation";
+import { oktaAuthConfig, oktaSignInConfig } from "./components/Login/config";
 
 const oktaAuth = new OktaAuth(oktaAuthConfig);
 
