@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { useOktaAuth } from "@okta/okta-react";
-import { ApiCall } from "../../Api/Axios";
 import { Button, TextField, CircularProgress } from "@mui/material";
+import { ApiCall } from "../../Api/Axios";
 import Styles from "./styles.module.css";
 
 const ViewBalance = () => {
@@ -54,7 +52,7 @@ const ViewBalance = () => {
         <div className={Styles.viewBalContainer}>
           <label className={Styles.balAmount}>Balance</label>:
           {isLoading.balLoading ? (
-            <CircularProgress color="success" size="30px" />
+            <CircularProgress color="secondary" size="30px" />
           ) : (
             <strong>{balance}</strong>
           )}
@@ -66,7 +64,7 @@ const ViewBalance = () => {
           value={amount}
           onChange={handleAmountChange}
         />
-        <Button variant="contained" onClick={handlePayment}>
+        <Button variant="contained" color="success" onClick={handlePayment}>
           {isLoading.payLoading ? "Processing Payment..." : "Pay now"}
         </Button>
       </div>
